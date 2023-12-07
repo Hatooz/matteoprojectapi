@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'matteoprojectapi'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9D7B618B12A04610BFF330858F6022FD }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FD71A29702C94280A18F8C800C328B31 }}
           package: .
