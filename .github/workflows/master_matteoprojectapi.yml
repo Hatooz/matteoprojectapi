@@ -28,6 +28,11 @@ jobs:
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
+      - name: Entity Framework Migrations
+        run: |
+          dotnet ef database update --project MatteoRbProject --startup-project MatteoRbProject
+        env:
+          ConnectionStrings__YourDatabaseConnection: ${{ secrets.RBPROJECT }}
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
