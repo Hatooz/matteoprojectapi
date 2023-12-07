@@ -27,13 +27,13 @@ jobs:
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-      - name: Update database
-        run: |
-          dotnet tool install --global dotnet-ef --version 7.0.14
-          dotnet tool restore
-          dotnet ef database update
-        env:
-          ConnectionStrings__YourDatabaseConnection: ${{ secrets.RBPROJECT }}
+      ##- name: Update database
+        ##run: |
+          ##dotnet tool install --global dotnet-ef --version 7.0.14
+          ##dotnet tool restore
+          ##dotnet ef database update
+        ##env:
+          ##ConnectionStrings__YourDatabaseConnection: ${{ secrets.RBPROJECT }}
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
